@@ -1,11 +1,17 @@
-import _ from 'lodash';
+import _ from 'lodash'
+import './style.css'
+import Icon from './icon.jpg'
 
 function component() {
-  const element = document.createElement('div');
+  const element = document.createElement('div')
   // lodash 在当前 script 中使用 import 引入
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ')
+  element.classList.add('hello')
 
-  return element;
+  const myIcon = new Image()
+  myIcon.src = Icon
+  element.appendChild(myIcon)
+  return element
 }
 
-document.body.appendChild(component());
+document.body.appendChild(component())
