@@ -8,7 +8,8 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -17,8 +18,5 @@ module.exports = {
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist')
-  },
-  optimization: {
-    runtimeChunk: 'single'
   }
 }
